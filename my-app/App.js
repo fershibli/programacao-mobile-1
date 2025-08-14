@@ -4,13 +4,16 @@ import { LinearGradient } from 'expo-linear-gradient';
 import imagem from './assets/splash-icon.png'
 
 export default function App() {
+
+  const nome = 'Fatec Votorantim';
+
   return (
     <LinearGradient
       colors={['#eaffff', '#ffeaea']}
       style={styles.container}
       >
       <Text>Olá Mundo</Text>
-      <Text>Fatec Votorantim</Text>
+      <Text>{nome}</Text>
       <Text style={{ fontSize: 20, color: '#333' }}>React Native</Text>
       <StatusBar style="auto" />
       <Image source={imagem} style={{ width: 200, height: 200 }} />
