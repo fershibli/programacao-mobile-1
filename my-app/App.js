@@ -1,12 +1,21 @@
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import imagem from './assets/splash-icon.png'
 
 export default function App() {
+  const [color, setColor] = useState(0);
 
   const nome = 'Fatec Votorantim';
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColor(prevColor => (prevColor + 10) % 360);
+    }, 5);
+    return () => clearInterval(interval);
+  }, []);
+  
   return (
     <LinearGradient
       colors={['#eaffff', '#ffeaea']}
@@ -14,7 +23,7 @@ export default function App() {
       >
       <Text>Olá Mundo</Text>
       <Text>{nome}</Text>
-      <Text style={{ fontSize: 20, color: '#333' }}>React Native</Text>
+      <Text style={{ fontSize: 20, color: `hsla(${color}, 100%, 50%, 1.00)` }}>React Native</Text>
       <StatusBar style="auto" />
       <Image source={imagem} style={{ width: 200, height: 200 }} />
     </LinearGradient>
