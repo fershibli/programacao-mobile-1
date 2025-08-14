@@ -1,19 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import imagem from './assets/splash-icon.png'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <LinearGradient
+      colors={['#eaffff', '#ffeaea']}
+      style={styles.container}
+      >
+      <Text>Olá Mundo</Text>
+      <Text>Fatec Votorantim</Text>
+      <Text style={{ fontSize: 20, color: '#333' }}>React Native</Text>
       <StatusBar style="auto" />
-    </View>
+      <Image source={imagem} style={{ width: 200, height: 200 }} />
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
