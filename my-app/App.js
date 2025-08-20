@@ -22,8 +22,8 @@ export default function App() {
       style={styles.container}
       >
       <Text>Olá Mundo</Text>
-      <Text>{nome}</Text>
-      <Text style={{ fontSize: 20, color: `hsla(${color}, 100%, 50%, 1.00)` }}>React Native</Text>
+      <Text style={styles.title}>{nome}</Text>
+      <Text style={[styles.subtitle, { color: `hsla(${color}, 100%, 50%, 1.00)` }]}>React Native</Text>
       <StatusBar style="auto" />
       <Image source={imagem} style={{ width: 200, height: 200 }} />
     </LinearGradient>
@@ -36,4 +36,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    width: '100%',
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  subtitle: { 
+    fontSize: 20, 
+    fontWeight: 'bold',
+  }
 });
