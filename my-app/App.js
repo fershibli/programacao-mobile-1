@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import imagem from './assets/fatec-votorantim.png';
+import LogoFatec from './assets/fatec-votorantim.png';
+import LogoReact from './assets/react-native-logo.png';
 
 export default function App() {
   const [color, setColor] = useState(0);
@@ -25,7 +26,8 @@ export default function App() {
       <Text style={styles.title}>{nome}</Text>
       <Text style={[styles.subtitle, { color: `hsla(${color}, 100%, 50%, 1.00)` }]}>React Native</Text>
       <StatusBar style="auto" />
-      <Image source={imagem} style={{ width: 200, height: 200 }} />
+      <Image source={LogoFatec} style={styles.logoFatec} />
+      <Image source={LogoReact} style={styles.logoReact} />
     </LinearGradient>
   );
 }
@@ -46,5 +48,13 @@ const styles = StyleSheet.create({
   subtitle: { 
     fontSize: 20, 
     fontWeight: 'bold',
+  },
+  logoFatec: {
+    marginTop: 16,
+  },
+  logoReact: { 
+    width: 100, 
+    height: 100, 
+    resizeMode: 'contain' 
   }
 });
