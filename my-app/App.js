@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import imagem from './assets/splash-icon.png'
+import imagem from './assets/fatec-votorantim.png';
 
 export default function App() {
   const [color, setColor] = useState(0);
