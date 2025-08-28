@@ -7,6 +7,7 @@ import LogoReact from './assets/react-native-logo.png';
 
 export default function App() {
   const [color, setColor] = useState(0);
+  const [rotation, setRotation] = useState(0);
 
   const nome = 'Fatec Votorantim';
 
@@ -16,7 +17,14 @@ export default function App() {
     }, 5);
     return () => clearInterval(interval);
   }, []);
-  
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRotation(prevRotation => (prevRotation + 10) % 360);
+    }, 30);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <LinearGradient
       colors={['#eaffff', '#ffeaea']}
@@ -27,7 +35,7 @@ export default function App() {
       <Text style={[styles.subtitle, { color: `hsla(${color}, 100%, 50%, 1.00)` }]}>React Native</Text>
       <StatusBar style="auto" />
       <Image source={LogoFatec} style={styles.logoFatec} />
-      <Image source={LogoReact} style={styles.logoReact} />
+      <Image source={LogoReact} style={[styles.logoReact, {transform: [{ rotate: `${rotation}deg` }] }]} />
     </LinearGradient>
   );
 }
