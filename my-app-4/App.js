@@ -11,11 +11,22 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Query" component={QueryScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Tela Inicial" }}
+        />
+        <Stack.Screen
+          name="Query"
+          component={QueryScreen}
+          options={{ title: "Tela de Consulta" }}
+        />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{ title: "Tela de Registro" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
