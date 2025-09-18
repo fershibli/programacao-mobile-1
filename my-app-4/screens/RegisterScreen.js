@@ -15,7 +15,6 @@ function RegisterScreen() {
       <TextInput placeholder="Nome" style={styles.textInput} />
       <TextInput placeholder="Email" style={styles.textInput} />
       <TextInput placeholder="Senha" secureTextEntry style={styles.textInput} />
-      <TextInput placeholder="Senha" secureTextEntry style={styles.textInput} />
       <Button title="Cadastrar" onPress={() => {}} />
     </View>
   );
