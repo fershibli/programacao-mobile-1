@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Image, Dimensions, Text, View } from "react-native";
 
-import topo from "../assets/topo.png";
-import logo from "../assets/logo.png";
+import topo from "../../assets/topo.png";
+import logo from "../../assets/logo.png";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width, height } = Dimensions.get("screen");
